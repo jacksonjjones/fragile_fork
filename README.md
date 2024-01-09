@@ -34,6 +34,8 @@ THEN the password is either displayed in an alert or written to the page
 
 ## link to deployed App!
 
+https://jacksonjjones.github.io/fragile_fork/
+
 ## Screenshot of Deployed App!
 
 ![Screenshot of Deployed App](<Screenshot 2024-01-08 at 8.13.03 PM.png>)
