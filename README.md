@@ -36,4 +36,4 @@ THEN the password is either displayed in an alert or written to the page
 
 ## Screenshot of Deployed App!
 
-![Screenshot of Deployed App](<assets/images/Screenshot 2024-01-08 at 8.13.03 PM.png>)
+![Screenshot of Deployed App](<Screenshot 2024-01-08 at 8.13.03 PM.png>)
