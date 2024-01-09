@@ -3,7 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 
-function writePassword(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
+function generatePassword() {
   
   const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
   const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -13,20 +13,23 @@ function writePassword(length, includeLowercase, includeUppercase, includeNumber
   var allowedChars = "";
   var password = "";
   
+    const length = prompt("please enter a password length between 8 and 128 characters!");
+    const includeLowercase = confirm("would you like to use lowercase");
+    const includeUppercase = confirm("would you like to use uppercase");
+    const includeNumbers = confirm("would you like to use numbers");
+    const includeSymbols = confirm("would you like to use symbols");
+
   allowedChars += includeLowercase ? lowercaseChars : "";
   allowedChars += includeUppercase ? uppercaseChars : "";
   allowedChars += includeNumbers ? numberChars : "";
   allowedChars += includeSymbols ? symbolChars : "";
 
-  if(length <= 0){
-      return '(password length must be at least 1)';
+  if(!length || length < 8 || length > 128){
+      return alert("password must be between 8 and 128 characters!");
     
   }
   if(allowedChars.length === 0){
-      return '(At least 1 set of character needs to be selected)';
-  }
-  if(length === 129){
-      return '(password length cannot be greater than 128)';
+      return alert("At least 1 set of character needs to be selected");
   }
 
   for(let i = 0; i < length; i++){
@@ -37,22 +40,12 @@ function writePassword(length, includeLowercase, includeUppercase, includeNumber
   return password;
 }
 
-const passwordLength = 8;
-const includeLowercase = true;
-const includeUppercase = true;
-const includeNumbers = true;
-const includeSymbols = true; 
-
-var password = writePassword(passwordLength,
-                            includeLowercase,
-                            includeUppercase,
-                            includeNumbers,
-                            includeSymbols);
-
-var passwordText = document.querySelector("#password");
-
-passwordText.value = password;
+function writePassword(){
+    console.log("hi");
+    var newPassword = generatePassword()
+    document.querySelector("#password").value = newPassword;
+}
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
+generateBtn.addEventListener("click", writePassword);
